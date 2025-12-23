@@ -5,7 +5,7 @@ const codeReviewSchema = new mongoose.Schema(
         language: {
             type: String,
             required: true,
-            enum: ['javascript', 'c++']
+            enum: ['javascript', 'c++', 'java']
         },
         code: {
             type: String,
@@ -19,4 +19,4 @@ const codeReviewSchema = new mongoose.Schema(
     {timestamps: true}
 )
 
-module.exports = mongoose.model("codeReview",codeReviewSchema)
+export default mongoose.model("CodeReview", codeReviewSchema)
