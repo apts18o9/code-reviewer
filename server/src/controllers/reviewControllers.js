@@ -5,12 +5,12 @@ const createReview = async (req, res) => {
   try {
     const { language, code } = req.body;
 
-    if (!language || !code) {
-      return res.status(400).json({ message: "Language and code are required" });
+    if (!code) {
+      return res.status(400).json({ message: "Code is required" });
     }
 
     const review = await CodeReview.create({
-      language,
+      language: language || 'plaintext',
       code,
     });
 

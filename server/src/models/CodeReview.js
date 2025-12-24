@@ -4,8 +4,7 @@ const codeReviewSchema = new mongoose.Schema(
     {
         language: {
             type: String,
-            required: true,
-            enum: ['javascript', 'c++', 'java']
+            default: 'plaintext'
         },
         code: {
             type: String,
